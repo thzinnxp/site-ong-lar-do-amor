@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - ONG Lar do Amor</title>
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/componentes-feedback.css">
+<link rel="stylesheet" href="../css/interatividade-ong.css">
+</head>
+<body>
+    <header>
+        <h1>ONG Lar do Amor</h1>
+
+        <nav aria-label="Navegação principal">
+            <a href="index.html">Início</a>
+            <a href="projetos.html" aria-current="page">Projetos</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="alerta alerta--informacao" role="status">
+            <p>Conheça os projetos e veja como participar das ações da ONG.</p>
+        </div>
+
+       <section aria-labelledby="titulo-projetos">
+    <h2 id="titulo-projetos">Projetos sociais</h2>
+    <p>Conheça as atividades realizadas pela ONG.</p>
+
+    <template id="modelo-projeto">
+        <article class="cartao-projeto">
+            <h2 class="projeto-titulo"></h2>
+            <p class="projeto-descricao"></p>
+            <a class="botao projeto-link" href="#">Saiba mais</a>
+            <button type="button" class="botao-favorito" aria-pressed="false">
+    Favoritar
+</button>
+        </article>
+    </template>
+
+    <section id="lista-projetos" class="lista-projetos" aria-label="Projetos da ONG"></section>
+
+    <article id="campanha-alimentos">
+        <h3>Campanha de alimentos</h3>
+        <p>
+            Arrecadamos alimentos para apoiar famílias em
+            vulnerabilidade social.
+        </p>
+    </article>
+</section>
+
+            <article id="oficinas">
+                <h3>Oficinas para a comunidade</h3>
+                <p>
+                    Realizamos atividades educativas para crianças, jovens e adultos.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Seja voluntário</h2>
+            <p>Você pode participar das ações e ajudar a transformar vidas.</p>
+
+            <ul>
+                <li>Ajudar em campanhas de doação</li>
+                <li>Participar da organização de eventos</li>
+                <li>Colaborar em atividades com a comunidade</li>
+            </ul>
+
+            <a href="cadastro.html">Cadastrar-se como voluntário</a>
+        </section>
+
+        <section>
+            <h2>Faça uma doação</h2>
+            <p>Sua contribuição ajuda a manter os projetos sociais da ONG.</p>
+            <p>
+                Entre em contato com a ONG para saber como doar.
+                A página de cadastro é destinada a voluntários.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>ONG Lar do Amor - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

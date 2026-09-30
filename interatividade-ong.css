@@ -1,0 +1,82 @@
+/* Acrescente este bloco ao final do style.css da ONG Lar do Amor. */
+
+/* Botões, inclusive links com aparência de botão */
+.botao {
+  background-color: var(--vermelho);
+  color: var(--branco);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.2s ease, border-color 0.2s ease;
+}
+
+.botao:hover:not(:disabled) {
+  background-color: var(--vermelho-escuro);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+  transform: translateY(-2px);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(21, 101, 192, 0.18);
+}
+
+.botao:active:not(:disabled) {
+  background-color: var(--preto);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+}
+
+.botao:disabled {
+  background-color: #666666;
+  color: var(--branco);
+  box-shadow: none;
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Cartões de projetos: destaque suave na interação */
+.cartao-projeto {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-projeto:hover,
+.cartao-projeto:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  transform: translateY(-2px);
+}
+
+/* Campos do formulário: foco, formato válido e formato inválido após interação */
+.formulario-cadastro input {
+  border: 2px solid #777777;
+  background-color: var(--branco);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.formulario-cadastro input:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.14);
+}
+
+.formulario-cadastro input:not(:placeholder-shown):valid {
+  border-color: #247a39;
+  background-color: #f0faf2;
+}
+
+.formulario-cadastro input:not(:placeholder-shown):invalid:not(:focus) {
+  border-color: #b42318;
+  background-color: #fff1f0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao,
+  .cartao-projeto,
+  .formulario-cadastro input {
+    transition: none;
+  }
+}

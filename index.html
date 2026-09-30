@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Lar do Amor</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/componentes-feedback.css">
+    <link rel="stylesheet" href="../css/interatividade-ong.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>ONG Lar do Amor</h1>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle"
+               aria-label="Abrir ou fechar menu">
+        <label for="menu-toggle" class="botao-menu">☰</label>
+
+        <nav class="menu" aria-label="Navegação principal">
+    <a href="#inicio" data-pagina="inicio">Início</a>
+
+    <div class="dropdown">
+        <a href="#projetos" data-pagina="projetos">Projetos</a>
+        <div class="submenu">
+            <a href="#projetos/educacao">Educação</a>
+            <a href="#projetos/acao-social">Ação Social</a>
+        </div>
+    </div>
+
+    <a href="#cadastro" data-pagina="cadastro">Cadastro</a>
+</nav>
+    </header>
+
+    <main>
+    <div id="conteudo-principal">
+        <section>
+            <img src="../imagens/voluntarios.jpeg"
+                 alt="Voluntários realizando uma ação social">
+
+            <h2>Transformando vidas</h2>
+            <p>
+                A ONG Lar do Amor realiza ações sociais para apoiar pessoas e
+                famílias em situação de vulnerabilidade.
+            </p>
+        </section>
+
+        <section>
+            <h2>Entre em contato</h2>
+            <p>E-mail: contato@onglardoamor.org</p>
+            <p>Telefone: (32) 99999-9999</p>
+            <p>Endereço: Juiz de Fora - MG</p>
+        </section>
+    </div>
+</main>
+
+    <footer>
+        <p>ONG Lar do Amor - Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>

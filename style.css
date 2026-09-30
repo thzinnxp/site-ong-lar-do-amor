@@ -1,0 +1,235 @@
+/* Cores, fontes e espaçamentos */
+:root {
+  --vermelho: #a61c20;
+  --vermelho-escuro: #801519;
+  --azul: #1565c0;
+  --azul-claro: #a9d2ff;
+  --preto: #111111;
+  --branco: #ffffff;
+  --cinza-claro: #f2f2f2;
+  --fonte-principal: "Times New Roman", Times, serif;
+  --texto-normal: 16px;
+  --texto-subtitulo: 20px;
+  --texto-titulo: 28px;
+  --texto-titulo-principal: 36px;
+  --espaco-pequeno: 8px;
+  --espaco-medio: 16px;
+  --espaco-grande: 24px;
+  --espaco-extra: 32px;
+  --espaco-secao: 48px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-principal);
+  font-size: var(--texto-normal);
+  color: var(--preto);
+  background-color: var(--cinza-claro);
+}
+
+header {
+  padding: var(--espaco-grande);
+  text-align: center;
+  color: var(--branco);
+  background-color: var(--azul);
+}
+
+header h1 {
+  margin: 0 0 var(--espaco-medio);
+  color: var(--branco);
+  font-size: var(--texto-titulo-principal);
+}
+
+header nav:not(.menu) {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-medio);
+}
+
+header nav a {
+  color: var(--branco);
+  text-decoration: none;
+  padding: var(--espaco-pequeno);
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  color: var(--azul-claro);
+  text-decoration: underline;
+}
+
+main {
+  width: min(100% - 32px, 1100px);
+  margin: 0 auto;
+}
+
+main > section { margin-top: var(--espaco-secao); }
+main img { display: block; max-width: 100%; height: auto; }
+
+h2 { color: var(--azul); font-size: var(--texto-titulo); margin-top: var(--espaco-extra); }
+h3 { color: var(--preto); font-size: var(--texto-subtitulo); }
+p { line-height: 1.6; margin-bottom: var(--espaco-medio); }
+
+.botao {
+  display: inline-block;
+  width: fit-content;
+  padding: var(--espaco-pequeno) var(--espaco-medio);
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover { background-color: var(--vermelho-escuro); }
+a:focus-visible, button:focus-visible, input:focus-visible, .botao-menu:focus-visible {
+  outline: 3px solid var(--azul-claro);
+  outline-offset: 2px;
+}
+
+footer, .rodape {
+  padding: var(--espaco-medio);
+  margin-top: var(--espaco-secao);
+  text-align: center;
+  color: var(--branco);
+  background-color: var(--preto);
+}
+
+/* Cabeçalho e menu da página inicial */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-medio);
+  position: relative;
+  background-color: var(--preto);
+  text-align: left;
+}
+.cabecalho h1 { margin: 0; }
+.menu { display: flex; align-items: center; gap: var(--espaco-medio); }
+.menu a { display: block; }
+.dropdown { position: relative; }
+.submenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: var(--espaco-pequeno);
+  background-color: var(--vermelho-escuro);
+  z-index: 10;
+}
+.dropdown:hover .submenu, .dropdown:focus-within .submenu { display: flex; }
+.submenu a:hover, .submenu a:focus-visible { color: var(--branco); text-decoration: underline; }
+.menu-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.botao-menu { display: none; color: var(--branco); font-size: 32px; cursor: pointer; }
+
+/* Projetos */
+.lista-projetos { display: flex; flex-wrap: wrap; gap: var(--espaco-grande); }
+.cartao-projeto {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: var(--espaco-grande);
+  background-color: var(--branco);
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+.cartao-projeto h2 { margin-top: 0; }
+
+/* Cadastro */
+.formulario-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-medio);
+  max-width: 500px;
+  margin: var(--espaco-grande) auto;
+  padding: var(--espaco-grande);
+  background-color: var(--branco);
+  border-radius: 4px;
+}
+.formulario-cadastro fieldset { min-width: 0; border: 1px solid #999999; }
+.formulario-cadastro legend { font-weight: bold; }
+.formulario-cadastro label { display: block; margin: var(--espaco-medio) 0 var(--espaco-pequeno); }
+.formulario-cadastro input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #777777;
+  border-radius: 4px;
+  font: inherit;
+}
+.formulario-cadastro .botao { align-self: flex-start; }
+
+/* Grade opcional: use quando houver classes correspondentes no HTML */
+.grade-principal { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--espaco-grande); }
+.conteudo { grid-column: span 8; }
+.lateral { grid-column: span 4; }
+
+@media (max-width: 768px) {
+  .grade-principal { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .conteudo { grid-column: span 4; }
+  .lateral { grid-column: span 2; }
+  .cabecalho { flex-wrap: wrap; }
+  .botao-menu { display: block; }
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    position: static;
+    width: 100%;
+    padding: var(--espaco-medio);
+    background-color: var(--preto);
+  }
+  .menu-toggle:checked ~ .menu { display: flex; }
+  .menu-toggle:focus-visible + .botao-menu { outline: 3px solid var(--azul-claro); outline-offset: 2px; }
+  .dropdown, .submenu { width: 100%; }
+  .submenu { display: flex; position: static; padding-left: var(--espaco-medio); }
+}
+
+@media (max-width: 576px) {
+  .grade-principal { grid-template-columns: 1fr; }
+  .conteudo, .lateral { grid-column: 1; }
+  header h1 { font-size: 28px; }
+  .formulario-cadastro { padding: var(--espaco-medio); }
+}
+.alerta {
+    padding: 16px;
+    margin: 16px 0;
+    border: 1px solid;
+    border-left-width: 5px;
+    border-radius: 4px;
+}
+
+.alerta p {
+    margin: 0;
+}
+
+.alerta--informacao {
+    background-color: #eaf3ff;
+    border-color: #1565c0;
+    color: #123c70;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.badge--educacao {
+    background-color: #d9ebff;
+    color: #103f79;
+}
+
+.badge--social {
+    background-color: #fce0e0;
+    color: #86201f;
+}
